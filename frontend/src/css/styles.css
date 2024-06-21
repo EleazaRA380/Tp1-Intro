@@ -10,7 +10,7 @@ body {
 }
 
 .Jcontainer {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;  
     justify-content: center;  
@@ -18,16 +18,8 @@ body {
     width: 100%;
 }
 
-.Jcontainer1{
-    display: flex;
-    flex-direction: column;
-    align-items: center;  
-    justify-content: center;  
-    height: 100%; 
-    width: 100%;
-}
 
-#JcontenedorClima {
+#JcontainerClima {
     background: #D3D3D3;
     max-width: 400px;
     width: 100%; 
@@ -41,26 +33,13 @@ body {
     color: #1a1a1a;
 }
 
-#Jubicacion{
-    font-size: larger;
-}
-
-#Jtemperatura {
-    font-size: xx-large;
-}
-
-#JcontenedorClima img{
-    width: 25%;
-}
-
-
 
 h2, label, p {
     color: #1a1a1a;
     margin: 8px;
 }
 
-input {
+#JInput {
     padding: 5px;
     width: calc(100% - 20px);
     box-sizing: border-box;
@@ -85,6 +64,71 @@ input {
     background: #929292;
     transition: all;
 }
+
+.JContainerInfoClima {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center;  
+    height: 100%; 
+    width: 100%;
+}
+
+.containerDetailClima {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.containerDetailClima img, .containerDetailClima p {
+    margin: 0 10px; 
+}
+
+
+.infoClima{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center;  
+    height: 100%; 
+    width: 100%;
+}
+
+#ubiImg{
+    width: 2%;
+    height: 4%;
+}
+
+#climaImg{
+    width: 15%;
+    height: 30%;
+}
+
+#direccionVientoImg{
+    width: 4%;
+    height: 45%;
+    margin: 30px;
+}
+
+#grados{
+    font-size: 30px;
+    margin: 30px;
+}
+
+#estadoImg{
+    width: 4%;
+    height: 40%;
+    margin: 30px;
+}
+
+#temperaturaImg{
+    width: 5%;
+    height: 55%;
+    margin: 30px;
+}
+
+
+
 
 #Jfooter {
     background-color: #D3D3D3;
