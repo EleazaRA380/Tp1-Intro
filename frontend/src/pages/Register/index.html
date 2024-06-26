@@ -3,30 +3,38 @@
     <head>
         <meta charset="UTF-8">
         <title>Register</title>
-        <link rel="stylesheet" href="/src/css/Register.css">
+        <link rel="stylesheet" href="../../css/user-auth.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     </head>
-    <body>
-        <div class="container">
-            <form class="Login-Form">
-                <div id="LoginColumn" class="column">
-
-                    <h2 class="saludo">Hello!</h2>
-                    <h1 class="saludo">Good Morning</h1>
-                    <h2 id="title">SIGN UP</h2>
-
-                    <input class="interactive" type="text" id="UserName" name="username" placeholder="username" required>
-                    <input class="interactive" type="email" id="UserEmail" name="email" placeholder="email" required>
-                    <input class="interactive" type="password" id="UserPass" name="password" placeholder="password" required>
-                    <br>
-                    <a id="LoginLink" href="/src/pages/Login/index.html"><strong>Do you alredy have an account?</strong></a>
-                    <br>
+    <body data-archivo="Register">
+        <main data-archivo="Register" class="container">
+            <div class="column">
+                <h2 class="saludo">Hello!</h2>
+                <h1 class="saludo">Good Morning</h1>
+                <h2 id="title"><strong>SIGN UP</strong></h2>
+                <form action="../Login/index.html" method="post" class="Form" onsubmit="return verifyPasswords(password, confirmPass)">
+                    <!--El atributo Onsubmit ejecuta la funcion verifyPasswords en auth.js-->
+                    <input class="interactive" type="text" id="userName" name="userName" placeholder="username" required>
+                    <input class="interactive" type="password" id="userPass" name="password" placeholder="password" required>
+                    <input class="interactive" type="password" id="repeatPass" name="confirmPass" placeholder="repeat password" required>
+                    <span id="errorMessage" style="color: #d84949;"></span>
                     <button type="submit"><strong>Create account</strong></button>
+                </form>
+                <a id="LoginLink" href="../Login/index.html"><strong>Do you alredy have an account?</strong></a>
+            </div>
+            <div class="column">
+                <h1><strong>Weather app</strong></h1>
+                <div  id="icons" class="icons">
+                    <i class="fas fa-cloud cloud-icon"></i>
+                    <div class="rain">
+                        <i class="raindrop" id="1"></i>
+                        <i class="raindrop" id="2"></i>
+                        <i class="raindrop" id="3"></i>
+                    </div>
                 </div>
-                <div class="column">
-                    <h1><strong>Weather app</strong></h1>
-                    <p>get your account!</p>
-                </div>    
-            </form>
-        </div>
+                <h2><strong>get your account!</strong></h2>
+            </div>    
+        </main>
+        <script src="../../js/auth.js"></script>
     </body>
 </html>
