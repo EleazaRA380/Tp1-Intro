@@ -1,20 +1,27 @@
-function RainDelay(raindrops){
-  for ( var index = 0; index < raindrops.length; index++) {
-    var raindrop=raindrops[index];
-    raindrop.style.animationDelay = `${index * 0.7}s`; 
+function verifyRegister() {
+  const password=document.getElementById("userPass").value;
+  const confirm_password=document.getElementById("repeatUserPass").value;
+  const error_element=document.getElementById("errorMessage");
+  const user=document.getElementById("userName").value;
+  var itsvalid=false;
+  if(user.length<=18){
+    if(password.length<=10){
+      if (password === confirm_password){
+        itsvalid=true; // Las contraseñas coinciden"
+        window.location.href="../Login/index.html"
+      }   
+      else{
+        error_element.textContent="passwords are not the same."; 
+        // Las contraseñas no coinciden
+      }
+    }
+    else{ 
+      error_element.textContent="The password cannot be longer than 10 characters.";
+    }
   }
-}
-
-const raindrops=document.querySelectorAll('.raindrop');
-RainDelay(raindrops);
-
-
-function verifyPasswords(password, confirmPass) {
-  const error_element=document.getElementById('errorMessage');
-  if (password.value === confirmPass.value) {
-    return true; // Las contraseñas coinciden
-  } else {
-    error_element.textContent='passwords are not the same';
-    return false; // Las contraseñas no coinciden
+  else{
+    error_element.textContent="The username cannot be longer than 18 characters.";
   }
+
+  return itsvalid;
 }
