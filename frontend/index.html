@@ -15,15 +15,15 @@
                 <div class="sboton-visible"></div>
             </button>
             <ul class="smenu">
-                <li class="selemento1"><a href="../../pages/login.html">ingresar</a></li>
-                <li class="selemento1"><a href="../../pages/register.html">registrarse</a></li>
-                <li class="selemento2"><boton class="spersonalizar"> personalizar </boton></li>
+                <li class="selemento1"><a href="../../pages/login.html">Ingresar</a></li>
+                <li class="selemento1"><a href="../../pages/register.html">Registrarse</a></li>
+                <li class="selemento2"><boton class="spersonalizar">Personalizar</boton></li>
                    
-                <li class="selemento3"><boton>vientos</boton></li>
-                <li class="selemento3"><boton>lluvias</boton></li>
-                <li class="selemento3"><boton>humedad</boton></li>
-                <li class="selemento3"><boton>presion atmosferica</boton></li>
-                <li class="selemento3"><boton>sensación termica</boton></li>
+                <li class="selemento3"><boton id="vientoBtn">Viento</boton></li>
+                <li class="selemento3"><boton id="tempBtn">Temperatura</boton></li>
+                <li class="selemento3"><boton id="lluviaBtn">Lluvia</boton></li>
+                <li class="selemento3"><boton id="sensTermicaBtn">Sensación Térmica</boton></li>
+                <li class="selemento3"><boton id="humedadBtn">Humedad</boton></li>
                  
                 
                 <li class="selemento2">Salir</li>
@@ -35,19 +35,25 @@
             <img id="ubiImg" src="/frontend/src/images/ubicacion.png">
             <p id="JCiudad">Buenos Aires</p>
             <img id="climaImg" src="https://www.svgrepo.com/show/427015/weather-icons-44.svg">
+
+
             <div class="containerDetailClima">
-                <div class="img-container">
-                    <img id="direccionVientoImg" src="/frontend/src/images/dirViento.png">
+                <div id="vientoDiv" class="img-container">
+                    <img id="direccionVientoImg" src="/frontend/src/images/direccionViento.png">
                     <p class="hover-text">Dirección del viento</p>
                 </div>
                 <p id="grados"><strong>25º</strong></p>
-                <div class="img-container">
-                    <img id="estadoImg" src="/frontend/src/images/paraguas.png">
-                    <p class="hover-text">Estado</p>
+                <div id="lluviaDiv" class="img-container">
+                    <img id="lluviaImg" src="/frontend/src/images/lluvia.png">
+                    <p class="hover-text">Probabilidad de Lluvia</p>
                 </div>
-                <div class="img-container">
-                    <img id="temperaturaImg" src="/frontend/src/images/temperature.png">
+                <div id="sensTermicaDiv" class="img-container">
+                    <img id="sensTermicaImg" src="/frontend/src/images/temperatura.png">
                     <p class="hover-text">Sensación Termica</p>
+                </div>
+                <div id="humedadDiv" class="img-container">
+                    <img id="humedadImg" src="/frontend/src/images/humedad.png">
+                    <p class="hover-text">Humedad</p>
                 </div>
             </div>
         </div>
