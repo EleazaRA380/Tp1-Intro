@@ -42,6 +42,10 @@ function botonPersonalizar(){
     })
 }
 
+function JbuscarClima() {
+    document.querySelector('.Jcontainer').style.display = 'none';
+    document.querySelector('.JContainerInfoClima').style.display = 'flex';
+}
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const vientoBtn = document.getElementById('vientoBtn');
@@ -94,6 +98,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
             humedadDiv.style.display = 'block';
         } else {
             humedadDiv.style.display = 'none';
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const tempBtn = document.getElementById('tempBtn');
+    const grados = document.getElementById('grados');
+
+    tempBtn.addEventListener('click', () => {
+        if(grados.style.display === 'none' || grados.style.display === ''){
+            grados.style.display = 'block';
+        } else {
+            grados.style.display = 'none';
         }
     });
 });
