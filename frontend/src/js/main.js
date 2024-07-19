@@ -60,6 +60,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+const ciudadInput = document.getElementById('JInput');
+const boton = document.getElementById('JButtonBuscar');
+const ciudadTexto = document.getElementById('JCiudad');
+
+boton.addEventListener('click', () => {
+    const valor = ciudadInput.value;
+    ciudadTexto.textContent = valor;
+});
+
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const lluviaBtn = document.getElementById('lluviaBtn');
