@@ -1,5 +1,3 @@
-# app/weather.py
-from . import app
 from flask import Flask, request, jsonify
 from urllib.parse import unquote # Funcion Unquote reemplaza %xx escapes con su equivalente de un solo carácter (vacio("")).
 import json
