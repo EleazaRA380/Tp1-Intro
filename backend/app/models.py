@@ -1,5 +1,3 @@
-# app/models.py
-from . import app
 import datetime
 from flask_sqlalchemy import SQLAlchemy
 
