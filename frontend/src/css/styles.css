@@ -124,8 +124,8 @@ h2, label, p {
     opacity: 1;
 }
 
-.vientoDiv{
-    display: block;
+#vientoDiv, #lluviaDiv, #sensTermicaDiv, #humedadDiv, #grados {
+    display: none;
 }
 
 #direccionVientoImg{
