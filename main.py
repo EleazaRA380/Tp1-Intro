@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template, session
 from flask_sqlalchemy import SQLAlchemy
 from models import db2, Usuario, Personalizacion
+from sqlalchemy import exists
 
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 port = 5000
@@ -84,26 +85,42 @@ def toggle_personalizacion(campo):
 @app.route('/auth', methods=['POST'])
 def auth():
     try:
-        usuario = request.form['username']
-        contrasena = request.form['password']
+        with app.app_context():
+            usuario = request.form['username']
+            contrasena = request.form['password']
 
-        # Validar si el usuario y la contraseña existen en la base de datos
-        user = Usuario.query.filter_by(usuario=usuario).first()
+            # Validar si el usuario y la contraseña existen en la base de datos
+            user = Usuario.query.filter_by(usuario=usuario).first()
 
-        if user and user.contrasena == contrasena:
-            # Autenticación exitosa
-            global user_id
-            user_id = user.id
-            return render_template('index2.html')  # Redirigir a la página de dashboard
-        else:
-            # Autenticación fallida
-            return render_template('/login.html') , 401 
+            if user and user.contrasena == contrasena:
+                # Autenticación exitosa
+                global user_id
+                user_id = user.id
+                return render_template('index2.html')  # Redirigir a la página de dashboard
+            else:
+                # Autenticación fallida
+                return render_template('/login.html') , 401 
 
     except Exception as e:
         print(f'Error en la autenticación: {str(e)}')
         return render_template('/login.html') , 500
-          
 
+#ruta para verificar si un usuario existe
+@app.route('/check_username/<string:username>', methods=['GET'])
+def check_username(username):
+    try:
+        with app.app_context():
+        # Verificar si existe algún usuario con el nombre de usuario dado
+            user_exists = db2.session.query(exists().where(Usuario.usuario == username)).scalar()
+
+            if user_exists:
+                return jsonify({'message': 'El nombre de usuario ya está en uso'}), 200
+            else:
+                return jsonify({'message': 'El nombre de usuario está disponible'}), 200
+
+    except Exception as e:
+        print(f'Error al verificar el nombre de usuario: {str(e)}')
+        return jsonify({'message': 'Error interno del servidor'}), 500
 
 # Ruta para agregar un nuevo usuario
 @app.route('/usuarios/register', methods=['POST'])
