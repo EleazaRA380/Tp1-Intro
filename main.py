@@ -18,11 +18,11 @@ db2.init_app(app)
 # Rutas
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('indexbase.html')
 
 @app.route('/index')
 def index2():
-    return render_template('index2.html')
+    return render_template('index.html')
 
 @app.route('/login')
 def login():
@@ -96,7 +96,7 @@ def auth():
                 # Autenticación exitosa
                 global user_id
                 user_id = user.id
-                return render_template('index2.html')  # Redirigir a la página de dashboard
+                return render_template('index.html')  # Redirigir a la página de dashboard
             else:
                 # Autenticación fallida
                 return render_template('/login.html') , 401 
