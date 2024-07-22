@@ -20,6 +20,3 @@ class Personalizacion(db2.Model):
     humedad = db2.Column(db2.Boolean, default=False)
     temperatura = db2.Column(db2.Boolean, default=False)
     sensacionTermica = db2.Column(db2.Boolean, default=False)
-
-if __name__ == '__main__':
-    app.run(debug=True)
