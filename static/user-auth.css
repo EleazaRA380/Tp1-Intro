@@ -17,7 +17,6 @@ body{
 }
 
 [data-archivo="Register"] main{
-
     background: rgba(80, 211, 235, 0.2);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     display: flex;
@@ -62,7 +61,6 @@ input{
     font-style: normal;
     font-weight: 700;
     font-size: medium;
- 
     background: transparent;
     color: #032030;     
     border: 2px solid #c7e2fa;
