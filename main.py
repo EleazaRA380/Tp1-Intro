@@ -161,6 +161,29 @@ def add_usuario():
         print('Error:', error)
         return jsonify({'message': 'Internal server error'}), 500
 
+@app.route('/usuarios', methods=['DELETE'])
+def delete_usuario():
+    global user_id
+    try:
+        with app.app_context():
+            usuario = Usuario.query.get(user_id)
+            if not usuario:
+                return jsonify({'message': 'Usuario no encontrado'}), 404
+            
+            # Borrar la personalización asociada al usuario
+            personalizacion = usuario.personalizacion
+            db2.session.delete(personalizacion)
+            
+            # Borrar al usuario
+            db2.session.delete(usuario)
+            db2.session.commit()
+            
+            return jsonify({'message': 'Usuario y personalización borrados correctamente'}), 200
+        
+    except Exception as error:
+        print('Error:', error)
+        db2.session.rollback()
+        return jsonify({'message': 'Error interno del servidor'}), 500
 
 # Ruta para obtener todas la personalizacion del usuario
 @app.route('/usuarios/personalizacion', methods=['GET'])

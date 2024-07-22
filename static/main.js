@@ -18,6 +18,31 @@ function botonUsuario(){
     })
 }
 
+
+function borrarUsuario() {
+    fetch(`/usuarios`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error al borrar usuario');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Usuario borrado exitosamente:', data.message);
+    })
+    .catch(error => {
+        console.error('Error al borrar usuario:', error.message);
+    });
+}
+
+const botonBorrar = document.getElementById('borrarUsuarioButton');
+botonBorrar.addEventListener('click', borrarUsuario);
+
 //manejo de la respuesta al apretar personalizar
 function botonPersonalizar(){
     let boton = document.querySelector('.spersonalizar')
