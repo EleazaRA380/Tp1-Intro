@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    background-color: #f8f9fa;
+    padding: 0;
+    margin: 0;
+}
+header {
+    color: #a1a1a1; 
+    padding: 10px 10px; 
+}
+
+.sboton-visible{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 100%;
+    pointer-events: auto;
+}
+
+nav{
+    display:flex;
+    flex-direction: row-reverse;
+    margin-top: 10px;
+    margin-left: 10px;
+   
+}
+
+.sbotonclick{
+    margin-right: calc(100vw - 65px);
+}
+
+ul{
+    list-style-type: none; 
+    display: flex;
+    font-size: 24px;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: #a1a1a1;
+}
+
+
+.smenu{
+    margin-left: 30px;
+}
+
+.selemento1{
+    display: none;
+    cursor: default;
+    margin: -24px 25px 0px 0px;
+}
+
+.selemento2{
+    display: none;
+    cursor: default;
+    margin: -24px 25px 0px 0px;
+}
+
+.selemento3{
+    display: none;
+    cursor:default;
+    margin: -24px 25px 0px 0px;
+}
+
+.socultar-lista{
+    display: none;
+}
+
+.spersonalizarclick{
+    margin-right: -20px;
+}
+
+.smostrar{
+    display: flex;
+}
+
+#sboton{
+    margin-top: -10px;
+    width: calc(100vw);
+    height: 45px;
+    background-image: url('./images/icons8-nube-64.png');
+    background-size: contain;
+    background-color: #f8f9fa;
+    background-repeat: no-repeat;
+    background-position: right;
+    border: none;
+    position: absolute;
+    transition: margin-right 1.5s linear;
+    pointer-events: none;
+}
+
+#svolver{
+    display: none;
+    margin-top: -15px;
+    width: calc(100vw);
+    height: 35px;
+    background-image: url('../images/flecha3.png');
+    transform: rotate(-90deg);
+    background-size: contain;
+    background-color: #f8f9fa;
+    background-repeat: no-repeat;
+    border: none;
+    margin-left: auto;
+}
