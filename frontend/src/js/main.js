@@ -81,6 +81,7 @@ function botonUsuario(){
         document.querySelector('.Jcontainer').style.display = 'none';
         document.querySelector('.JContainerInfoClima').style.display = 'flex';
         document.querySelector('.spersonalizar').style.display = 'flex';
+        document.getElementById('Jfooter').style.backgroundColor = '#bebebe';
     }
 
     function mostrarClima(data) {
