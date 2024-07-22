@@ -1,11 +1,11 @@
+//manejo del boton principal
 function botonUsuario(){
     let boton = document.querySelector('#sboton')
     let listaBase = document.querySelectorAll('.selemento2')
     let listaPersonalizar = document.querySelectorAll('.selemento3')
     boton.addEventListener('click', function(){
         if (boton.classList.contains('sbotonclick')) {
-            boton.classList.remove('sbotonclick')
-           
+            boton.classList.remove('sbotonclick')           
         } else {
             boton.classList.add('sbotonclick')
             listaPersonalizar.forEach(element => {
@@ -18,6 +18,7 @@ function botonUsuario(){
     })
 }
 
+//manejo de la respuesta al apretar perzonalizar
 function botonPersonalizar(){
     let boton = document.querySelector('.spersonalizar')
     let lista = document.querySelectorAll('.selemento2')
@@ -115,6 +116,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+//función para cargar la ultima personalización del usuario
 function cargarPersonalizacion() {
     fetch(`/usuarios/personalizacion`)
         .then(response => {
@@ -124,10 +126,7 @@ function cargarPersonalizacion() {
             return response.json();
         })
         .then(data => {
-            // Extraer los datos de personalización del objeto JSON
             const personalizacion = data.personalizacion;
-            
-            // Usar los valores booleanos en JavaScript
             let viento = personalizacion.viento;
             let lluvia = personalizacion.lluvia;
             let humedad = personalizacion.humedad;
@@ -169,8 +168,8 @@ function cargarPersonalizacion() {
         });
 }
 
+//carga de la ultima personalización asociada al usuario
 document.addEventListener('DOMContentLoaded', function() {
-    // Aquí colocas tu código que quieres ejecutar una vez que la página ha cargado completamente
     cargarPersonalizacion();
 });
 
