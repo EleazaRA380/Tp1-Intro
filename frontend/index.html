@@ -66,29 +66,12 @@
             <input type="text" id="JInput" placeholder="Ingrese una ciudad, estado/provincia, país" required>
             <button id="JButtonBuscar" onclick="JbuscarClima()">Buscar</button>
         </div>    
-        <script src="./script.js"></script>
     </div>
 
     <footer id="Jfooter">
         <p id="p">Copyright © Todos los derechos reservados</p>
     </footer>
 
-    <script src="./src/js/main.js"></script>
-    <script>
-        function response_received(response) {
-        return response.json()
-        }
-        
-        function parse_data(content){
-        console.log(content)
-        }
-        
-        function request_error(){
-        
-        }
-        
-        fetch().then(response_received).then(parse_data).catch(request_error)
-        </script>
-        
+    <script src="./src/js/main.js"></script>        
 </body>
 </html>

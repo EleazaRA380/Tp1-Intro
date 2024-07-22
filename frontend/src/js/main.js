@@ -39,27 +39,78 @@ function botonUsuario(){
     })
     }
     
-    function JbuscarClima() {
 
-    const ubicacion = document.getElementById('JInput').value.trim();
-    const especificacionesUbicacion = ubicacion.split(',');
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('JButtonBuscar').addEventListener('click', JbuscarClima);
+    });
+
+    function JbuscarClima() {
+        
+        const input = document.getElementById('JInput').value;
     
-    if (especificacionesUbicacion.length === 3) {
-    const ciudad = especificacionesUbicacion[0].trim();
-    const estado = especificacionesUbicacion[1].trim();
-    const pais = especificacionesUbicacion[2].trim();
+        
+        const regex = /^[a-zA-Z\s]+,\s*[a-zA-Z\s]*,\s*[a-zA-Z\s]+$/;
     
-    const ciudadCodificada = encodeURIComponent(ciudad);
-    const estadoCodificado = encodeURIComponent(estado);
-    const paisCodificado = encodeURIComponent(pais);
+        if (!regex.test(input)) {
+            alert('El formato de entrada debe ser: Ciudad, Estado o provincia, País');
+            return;
+        }
     
-    const url = `http://127.0.0.1:5000/weather/${ciudadCodificada}-${estadoCodificado}-${paisCodificado}`;
-    document.querySelector('.Jcontainer').style.display = 'none';
-    document.querySelector('.JContainerInfoClima').style.display = 'flex';
-    document.querySelector('.spersonalizar').style.display = 'flex';
-    } else {
-    alert("Por favor, ingrese la ubicación en el formato 'Ciudad, Estado, País'");
+        const [city, state, country] = input.split(',').map(part => part.trim());
+    
+        const url = `http://localhost:5000/weather/${encodeURIComponent(city)}-${encodeURIComponent(state)}-${encodeURIComponent(country)}`;
+        
+        console.log(url)
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error en la solicitud a la API');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data); 
+                mostrarClima(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('No se pudo obtener la información del clima. Por favor, intente de nuevo.');
+            });
+
+        document.querySelector('.Jcontainer').style.display = 'none';
+        document.querySelector('.JContainerInfoClima').style.display = 'flex';
+        document.querySelector('.spersonalizar').style.display = 'flex';
     }
+
+    function mostrarClima(data) {
+        if (data[0].location === "Not Found") {
+            alert('Ubicación no encontrada. Por favor, verifique la entrada.');
+            return;
+        }
+    
+        const weather = data[0];
+        
+    
+        
+        document.getElementById('grados').innerHTML = `<strong>${weather.main.temp}ºC</strong>`;
+    
+        
+        const climaIcon = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
+        document.getElementById('climaImg').src = climaIcon;
+        document.getElementById('climaImg').alt = weather.weather[0].description;
+    
+        
+        document.getElementById('direccionVientoImg').alt = `Viento: ${weather.wind.deg}°`;
+        document.getElementById('lluviaImg').alt = `Lluvia: ${weather.clouds.all}%`;
+        document.getElementById('sensTermicaImg').alt = `Sensación Térmica: ${weather.main.feels_like}ºC`;
+        document.getElementById('humedadImg').alt = `Humedad: ${weather.main.humidity}%`;
+    
+        
+        document.querySelector('#vientoDiv .hover-text').innerText = `Viento: ${weather.wind.deg}° a ${weather.wind.speed} m/s`;
+        document.querySelector('#lluviaDiv .hover-text').innerText = `Lluvia: ${weather.clouds.all}%`;
+        document.querySelector('#sensTermicaDiv .hover-text').innerText = `Sensación Térmica: ${weather.main.feels_like}ºC`;
+        document.querySelector('#humedadDiv .hover-text').innerText = `Humedad: ${weather.main.humidity}%`;
     }
     
     const vientoBtn = document.getElementById('vientoBtn');
