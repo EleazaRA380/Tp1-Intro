@@ -23,7 +23,7 @@
     <div class="JContainerInfoClima">
         <div class="infoClima">
             <img id="ubiImg" src="{{ url_for('static', filename='images/ubicacion.png') }}">
-            <p id="JCiudad">Buenos Aires</p>
+            <p id="JCiudad"></p>
             <img id="climaImg" src="https://www.svgrepo.com/show/427015/weather-icons-44.svg">
 
 
@@ -53,10 +53,9 @@
     <div class="Jcontainer">
         <div id="JcontainerClima">
             <h2>Clima</h2>
-            <input type="text" id="JInput" placeholder="Ingresa una ciudad..." required>
+            <input type="text" id="JInput" placeholder="Ingrese una ciudad, estado/provincia, país" required>
             <button id="JButtonBuscar" onclick="JbuscarClima()">Buscar</button>
         </div>    
-        <script src="./script.js"></script>
     </div>
 
     <footer id="Jfooter">
@@ -64,5 +63,6 @@
     </footer>
 
     <script src="{{ url_for('static', filename='main2.js') }}"></script>
+
 </body>
 </html>

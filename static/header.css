@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif; 
+    font-family: "Varela Round", sans-serif;
     margin: 0; 
     background-color: #f8f9fa;
     padding: 0;
@@ -46,6 +46,7 @@ a{
 
 .smenu{
     margin-left: 30px;
+    height: 4px;
 }
 
 .selemento1{
@@ -67,6 +68,10 @@ a{
 }
 
 .socultar-lista{
+    display: none;
+}
+
+.spersonalizar{
     display: none;
 }
 
