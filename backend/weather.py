@@ -1,10 +1,11 @@
 from flask import Flask, request, jsonify
 from urllib.parse import unquote # Funcion Unquote reemplaza %xx escapes con su equivalente de un solo carácter (vacio("")).
+from flask_cors import CORS 
 import json
 import requests
 import os
 app = Flask(__name__)
-
+CORS(app)
 @app.route("/weather/<string:city_name>-<string:state_name>-<string:country_name>")
 def get_weather(city_name,state_name,country_name):    
     url_weather= "https://api.openweathermap.org/data/2.5/weather" 
