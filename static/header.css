@@ -1,12 +1,11 @@
 body {
     font-family: "Varela Round", sans-serif;
     margin: 0; 
-    background-color: #f8f9fa;
     padding: 0;
     margin: 0;
 }
 header {
-    color: #a1a1a1; 
+    color: black; 
     padding: 10px 10px; 
 }
 
@@ -49,22 +48,33 @@ a{
     height: 4px;
 }
 
+.smenu li button{
+    border: none;
+    border-style: none;
+    background-color: transparent;
+    color: #a1a1a1;
+    font-size: 24px;
+}
+
 .selemento1{
     display: none;
     cursor: default;
     margin: -24px 25px 0px 0px;
+    color: black;
 }
 
 .selemento2{
     display: none;
     cursor: default;
     margin: -24px 25px 0px 0px;
+    color: black;
 }
 
 .selemento3{
     display: none;
     cursor:default;
     margin: -24px 25px 0px 0px;
+    color: black;
 }
 
 .socultar-lista{
@@ -89,7 +99,7 @@ a{
     height: 45px;
     background-image: url('./images/icons8-nube-64.png');
     background-size: contain;
-    background-color: #f8f9fa;
+    background-color: #d6d6d6;
     background-repeat: no-repeat;
     background-position: right;
     border: none;

@@ -2,7 +2,7 @@ function botonUsuario(){
     let boton = document.querySelector('#sboton')
     let listaBase = document.querySelectorAll('.selemento1')
     boton.addEventListener('click', function(){
-/*
+
         if (boton.classList.contains('sbotonclick')) {
             boton.classList.remove('sbotonclick')
            
@@ -10,9 +10,12 @@ function botonUsuario(){
             boton.classList.add('sbotonclick')
             listaBase.forEach(element => {
                 element.classList.add('smostrar')
+            
             });
         }
-*/
+    })
+}
+/*
     if (boton.classList.contains('sbotonclick')) {
     boton.classList.remove('sbotonclick')
     } else {
@@ -25,7 +28,7 @@ function botonUsuario(){
     });
     }
     })
-    }
+    }*/
     
     function botonPersonalizar(){
     let boton = document.querySelector('.spersonalizar')
@@ -68,7 +71,7 @@ function botonUsuario(){
     
         const [city, state, country] = input.split(',').map(part => part.trim());
     
-        const url = `http://localhost:5000/weather/${encodeURIComponent(city)}-${encodeURIComponent(state)}-${encodeURIComponent(country)}`;
+        const url = `http://localhost:5000/clima/weather/${encodeURIComponent(city)}-${encodeURIComponent(state)}-${encodeURIComponent(country)}`;
         
         console.log(url)
 
@@ -122,6 +125,7 @@ function botonUsuario(){
         document.querySelector('#sensTermicaDiv .hover-text').innerText = `Sensación Térmica: ${weather.main.feels_like}ºC`;
         document.querySelector('#humedadDiv .hover-text').innerText = `Humedad: ${weather.main.humidity}%`;
     }
+    /*
     
     const vientoBtn = document.getElementById('vientoBtn');
     const vientoDiv = document.getElementById('vientoDiv');
@@ -172,7 +176,7 @@ function botonUsuario(){
     grados.style.display = 'none';
     }
     });
-
+    */
 
 
     

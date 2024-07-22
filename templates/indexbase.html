@@ -24,9 +24,7 @@
         <div class="infoClima">
             <img id="ubiImg" src="{{ url_for('static', filename='images/ubicacion.png') }}">
             <p id="JCiudad"></p>
-            <img id="climaImg" src="https://www.svgrepo.com/show/427015/weather-icons-44.svg">
-
-
+            <img id="climaImg">
             <div class="containerDetailClima">
                 <div id="vientoDiv" class="img-container">
                     <img id="direccionVientoImg" src="{{ url_for('static', filename='images/direccionViento.png') }}">
@@ -38,7 +36,7 @@
                     <p class="hover-text">Probabilidad de Lluvia</p>
                 </div>
                 <div id="sensTermicaDiv" class="img-container">
-                    <img id="sensTermicaImg" src="{{ url_for('static', filename='images/temperatura.png') }}">
+                    <img id="sensTermicaImg" src="{{ url_for('static', filename='images/temperature.png') }}">
                     <p class="hover-text">Sensación Termica</p>
                 </div>
                 <div id="humedadDiv" class="img-container">
@@ -52,7 +50,7 @@
 
     <div class="Jcontainer">
         <div id="JcontainerClima">
-            <h2>Clima</h2>
+            <h2><strong>Clima</strong></h2>
             <input type="text" id="JInput" placeholder="Ingrese una ciudad, estado/provincia, país" required>
             <button id="JButtonBuscar" onclick="JbuscarClima()">Buscar</button>
         </div>    

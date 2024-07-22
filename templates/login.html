@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Login</title>
+        <title>Iniciar Sesion</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='user-auth.css') }}">
-        
     </head>
     <body data-archivo="Login">
         <main>
             <div>
-                <h1 class="esaludo">Good<br>Morning</h1>
-                <h2>LOGIN</h2>
+                <h1 class="esaludo">Buen<br>día!</h1>
+                <h2>Iniciar Sesión</h2>
                 <form class="Form" action="/auth" method="post">
-                    <input class="interactive" type="text" id="userName" name="username" placeholder="username" required>
-                    <input class="interactive" type="password" id="userPass" name="password" placeholder="password" required>
+                    <input class="interactive" type="text" id="userName" name="username" placeholder="usuario" required>
+                    <input class="interactive" type="password" id="userPass" name="password" placeholder="contraseña" required>
                     <span id="errorMessage" style="color: #d84949;"></span>
-                    <button type="submit"><strong>Login</strong></button>                    
+                    <button type="submit"><strong>entrar</strong></button>                    
                 </form>
-                <a href="{{ url_for('register') }}"><strong>New here? Sign up</strong></a>     
+                <a href="{{ url_for('register') }}"><strong>Nuevo aqui? Registrate</strong></a>     
             </div>   
         </main>
     </body>

@@ -2,9 +2,13 @@ from flask import Flask, request, jsonify, render_template, session
 from flask_sqlalchemy import SQLAlchemy
 from models import db2, Usuario, Personalizacion
 from sqlalchemy import exists
+from weather import clima_app
+
 
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 port = 5000
+
+app.register_blueprint(clima_app, url_prefix='/clima')
 
 user_id = 0
 

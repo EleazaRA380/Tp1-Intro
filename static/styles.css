@@ -42,19 +42,26 @@ body {
 }
 
 h2, label, p {
+    font-weight: 700;
     color: #1a1a1a;
     margin: 8px;
 }
 
 #JInput {
     padding: 5px;
+    color: #032030;
     width: calc(100% - 20px);
     box-sizing: border-box;
+    font-weight: 700;
     border: 2px solid #c7e2fa;
     border-radius: 9px;
     margin-top: 15px;
     margin-bottom: 15px;
-    
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    background-color: transparent;
+    outline: none;
 }
 
 #JButtonBuscar {
@@ -154,7 +161,7 @@ h2, label, p {
 }
 
 #sensTermicaImg {
-    width: 30px; 
+    width: 43px; 
     height: 45px;
 }
 
@@ -179,7 +186,7 @@ h2, label, p {
 }
 
 #Jfooter {
-    background-color: rgba(80, 211, 235, 0.2);
+    background-color: #c7e2fa;
     color: white;
     text-align: center;
     width: 100%;  
