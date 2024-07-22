@@ -63,7 +63,7 @@
     <div class="Jcontainer">
         <div id="JcontainerClima">
             <h2>Clima</h2>
-            <input type="text" id="JInput" placeholder="Ingresa una ciudad..." required>
+            <input type="text" id="JInput" placeholder="Ingrese una ciudad, estado/provincia, país" required>
             <button id="JButtonBuscar" onclick="JbuscarClima()">Buscar</button>
         </div>    
         <script src="./script.js"></script>
@@ -74,5 +74,21 @@
     </footer>
 
     <script src="./src/js/main.js"></script>
+    <script>
+        function response_received(response) {
+        return response.json()
+        }
+        
+        function parse_data(content){
+        console.log(content)
+        }
+        
+        function request_error(){
+        
+        }
+        
+        fetch().then(response_received).then(parse_data).catch(request_error)
+        </script>
+        
 </body>
 </html>
